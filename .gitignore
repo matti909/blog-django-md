@@ -1,0 +1,68 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+db.sqlite3
+
+# Ignorar todas las migraciones excepto __init__.py
+**/migrations/*
+!**/migrations/__init__.py
+
+# Media and static files (if generated during development)
+media/
+staticfiles/
+
+# Ignore local settings
+.env
+*.env
+.env.*
+
+# VSCode settings
+.vscode/
+
+# Virtual environment
+venv/
+ENV/
+env/
+.venv/
+
+# macOS system files
+.DS_Store
+
+# pipenv, poetry
+Pipfile.lock
+poetry.lock
+
+# mypy, pyright, etc.
+.mypy_cache/
+.pyright/
+.pytest_cache/
+.tox/
+
+# Coverage reports
+htmlcov/
+coverage.xml
+*.cover
+.cache
+
+# Jupyter notebooks (optional, if you use them)
+.ipynb_checkpoints/
+
+# Node modules (if using any frontend toolchain)
+node_modules/
+
+# Build
+build/
+dist/
+*.egg-info/
+.eggs/
+
