@@ -1,21 +1,23 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
+from taggit.models import Tag
 from .models import Post
 
 
-def post_list(request):
+def post_list(request, tag_slug=None):
 
     post_list = Post.published.all()
-# Pagination with 3 posts per page
+
+    tag = None
+    if tag_slug:
+        tag = get_object_or_404(Tag, tag_slug=None)
+        post_list = post_list.filter(tags__in=[tag])
+
     paginator = Paginator(post_list, 3)
-    page_number = request.GET.get('page', 1)
+    page_number = request.GET.get("page", 1)
     posts = paginator.page(page_number)
 
-    return render(
-        request,
-        'list.html',
-        {'posts': posts}
-    )
+    return render(request, "list.html", {"posts": posts, "tag": tag})
 
 
 def post_detail(request, year, month, day, post):
@@ -26,10 +28,7 @@ def post_detail(request, year, month, day, post):
         slug=post,
         publish__year=year,
         publish__month=month,
-        publish__day=day)
-
-    return render(
-        request,
-        'blog/post/detail.html',
-        {'post': post}
+        publish__day=day,
     )
+
+    return render(request, "blog/post/detail.html", {"post": post})
