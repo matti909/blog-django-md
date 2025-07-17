@@ -1,7 +1,7 @@
 {% load blog_tags %}
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -19,8 +19,9 @@
 
   <div id="sidebar">
     <h2>My blog</h2>   
+    <br>
+    I've written {% total_posts %} posts so far.
     <h3>Latest posts</h3>
-
   <p>
     <a href="{% url "blog:post_feed" %}">
     Subscribe to my RSS feed
