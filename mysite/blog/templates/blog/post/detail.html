@@ -36,8 +36,10 @@
   <p class="info">
     Comment {{ forloop.counter }} by {{ comment.name }}
     {{ comment.created }}
-</p>
-  {{ comment.body|linebreaks }}
+  </p>
+  <p class="body-info">
+    {{ comment.body|linebreaks }}
+  </p>
 </div>
 {% empty %}
   <p>There are no comments yet.</p>

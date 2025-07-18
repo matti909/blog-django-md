@@ -98,7 +98,7 @@ p.date {
 label {
   float: left;
   clear: both;
-  color: #333;
+  color: #fff;
   margin-bottom: 4px;
 }
 
@@ -111,6 +111,7 @@ textarea {
   border: 0;
   padding: 6px 10px;
   font-size: 12px;
+  border-radius: 5px;
 }
 
 input[type="submit"] {
@@ -133,6 +134,7 @@ input[type="submit"] {
 /* Comentarios */
 .comment {
   padding: 10px;
+  border-radius: 1em;
 }
 
 .comment:nth-child(even) {
@@ -143,4 +145,9 @@ input[type="submit"] {
   font-weight: bold;
   font-size: 12px;
   color: #666;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
 }
