@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models.fields import URLField
+from django.db.models.fields.files import ImageField
 from django.utils import timezone
 from django.conf import settings
 from django.urls import reverse
@@ -20,6 +22,8 @@ class Post(models.Model):
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="blog_posts"
     )
+    image = ImageField(upload_to="blog/images", null=True, blank=True)
+    url = URLField(blank=True)
     body = models.TextField()
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
